@@ -1,6 +1,6 @@
 window.addEventListener("load", function() {
    let form = document.querySelector("form");
-   form.addEventListener("submit", function(event) {
+   form.addEventListener("submit", function(event) { //do these things on submit
       let pilotName = document.querySelector("input[name=pilotName]");
       let copilotName = document.querySelector("input[name=copilotName]");
       let fuelLevel = document.querySelector("input[name=fuelLevel]"); 
@@ -15,7 +15,18 @@ window.addEventListener("load", function() {
          alert("Form is invalid. Please try again."); 
          event.preventDefault();
 
-      }
+      } 
+/*
+      let button = document.getElementById(pilotStatus);
+      let paragraph = document.getElementById(copilotStatus);
+      let missionAbort = document.getElementById(fuelStatus);
+      let missionAbort = document.getElementById(cargoStatus);
+
+      console.log(`Pilot ${pilotName.value} is ready for launch`)
+      console.log(`Co-pilot ${copilotName.value} is ready for launch`)
+      console.log(`Pilot ${pilotName.value} is ready for launch`)
+
+*/
 
    });
 });
