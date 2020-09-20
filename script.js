@@ -14,6 +14,13 @@ window.addEventListener("load", function() {
       let copilotStatus = document.getElementById("copilotStatus");
       let fuelStatus = document.getElementById("fuelStatus");
       let cargoStatus = document.getElementById("cargoStatus");
+
+      let planet = [0, 1, 2, 3, 4, 5, 6]; //check and see if there's an easier way to do this..
+
+      function randomSelection(arr){
+         let index = Math.floor(Math.random()*arr.length);
+         return arr[index];
+      }
       
       if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields are required!");
@@ -32,13 +39,13 @@ window.addEventListener("load", function() {
                div.innerHTML = `
                <h2>Mission Destination</h2>
                <ol>
-               <li>Name: ${json[2].name}</li>
-               <li>Diameter: ${json[2].diameter}</li>
-               <li>Star: ${json[2].star}</li>
-               <li>Distance from Earth: ${json[2].distance}</li>
-               <li>Number of Moons: ${json[2].moons}</li>
+               <li>Name: ${json[randomSelection(planet)].name}</li>
+               <li>Diameter: ${json[randomSelection(planet)].diameter}</li>
+               <li>Star: ${json[randomSelection(planet)].star}</li>
+               <li>Distance from Earth: ${json[randomSelection(planet)].distance}</li>
+               <li>Number of Moons: ${json[randomSelection(planet)].moons}</li>
                </ol>
-               <img src="${json[2].image}"> 
+               <img src="${json[randomSelection(planet)].image}"> 
                `;
             });
          });
